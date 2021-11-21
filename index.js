@@ -9,7 +9,7 @@ const { stdout } = require("process");
 const request = require('request')
 const url = require("url");
 
-var querystring = require("querystring");
+const querystring = require("querystring");
 
 const app = express();
 
@@ -62,4 +62,21 @@ server.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
 
+
 // is stdout the hash ? // name of the project is in the project.json file
+
+
+// write a log file with winston logger
+
+// https://developer.ibm.com/tutorials/learn-nodejs-winston/
+
+
+// simple and fund testing with: https://mochajs.org/
+
+// OR jest ...
+
+//https://developer.okta.com/blog/2020/01/27/best-nodejs-testing-tools
+
+// I couldn't push to git why?
+
+// DOCKER: https://geshan.com.np/blog/2020/11/nodejs-with-docker/
