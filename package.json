@@ -1,0 +1,32 @@
+{
+  "name": "tech-challenge",
+  "version": "1.0.0",
+  "description": "my tech challenge ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapriole/tech-challenge.git"
+  },
+  "keywords": [
+    "tech",
+    "challenge",
+    "http",
+    "code"
+  ],
+  "author": "sonja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kapriole/tech-challenge/issues"
+  },
+  "homepage": "https://github.com/kapriole/tech-challenge#readme",
+  "dependencies": {
+    "mocha": "^9.1.3"
+  }
+}

@@ -1,0 +1,10 @@
+info: Nov-22-2021 17:51:24: 	Server started and running on http://localhost:3000
+info: Nov-22-2021 17:52:20: 	Server Sent A Hello Stranger!
+info: Nov-22-2021 17:57:54: 	Server started and running on http://localhost:3000
+info: Nov-22-2021 17:58:08: 	Server started and running on http://localhost:3000
+info: Nov-22-2021 17:58:31: 	JSON File with projectName and hash object was created
+error: Nov-22-2021 17:58:31: 	400 || OK - undefined - GET - undefined
+info: Nov-22-2021 18:00:04: 	Server started and running on http://localhost:3000
+info: Nov-22-2021 18:00:07: 	JSON File with projectName and hash object was created
+info: Nov-22-2021 18:04:17: 	Server started and running on http://localhost:3000
+info: Nov-22-2021 18:04:28: 	Any D Tom logged in

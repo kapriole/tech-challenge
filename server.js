@@ -4,120 +4,84 @@ const _ = require("lodash");
 const bodyParser = require("body-parser");
 
 const http = require("http");
-const port = 8080;
-
 const express = require("express");
+const { stdout } = require("process");
+const request = require("request");
+const url = require("url");
+
+const querystring = require("querystring");
+
 const app = express();
 
+// add log
+const logger = require("./utils/logger");
 
-const requestListener = function(req, res) {
-    res.writeHead(200);
-
-    if (req.url === '/') {
-        res.write('Hello, World!');
-    }
-    res.end();
-};
-
-const server = http.createServer(requestListener);
-server.listen(port);
-
-// use express to add an endpoint
-
-// I added "Hello Stranger" at http://localhost:3000/helloWorld
-
-
-// post request with axios
-
-app.get("/helloworld", (req, res) => {
-    res.send("Hello Stranger!");
-});
-
-app.listen(3000, () => console.log("Server ready"));
-
-//app.listen() returns an instance of http. You would use https.createServer if you needed to serve your app using HTTPS, as app.listen only uses the http module.
-
-app.post("/helloworld", (req, res) => {
-    res.send("Hello Stranger!");
-});
-
-// test environment variables
-// https://www.thirdrocktechkno.com/blog/how-to-set-environment-variable-in-node-js/
-// The process core module of Node.js provides the env property which hosts all the environment variables that were set at the moment the process was started.
-// If you have multiple environment variables in your node project, you can also create an .env file in the root directory of your project, and then use the dotenv package to load them during runtime.
-
-require("dotenv").config();
-//npm install dotenv
+const port = process.env.PORT || 3000;
 
 const user = process.env.USER_ID; // "239482"
 const key = process.env.USER_KEY; // "foobar"
 
 console.log("USER:", user);
-console.log("KEY:", key);
 
+console.log("process:", process.env.PWD);
 
+// how do I get the package.json object?
 
-// in bash I passed USER_ID=239482 USER_KEY=foobar node server.js 
-// result USER: 239482
-
-// add the user to url 
-// urlObject.search For example: '?query=string'.
-
-// set the urlObject.search to the bash input
-
-// append the userinput => user to the url
-
-// use curl ? : https://www.section.io/engineering-education/node-curl/
-
-// USE req.query to retrieve values for the URL paras
-
-
-//use the req. object
-
-// you can pass arguments thru the command line: e.g. node app.js name=joe
-
-// IMPORTANT: https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line
-// the process and argv objects
-
-// REPL also known as Read Evaluate Print Loop is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution.
-
-// parse the argument arg[0] is name=joe
-
-const args = require("minimist")(process.argv.slice(2));
-args["name"]; //joe
-console.log("hello?", args);
-// result: hello? { _: [], name: 'joe' }
-
-// bash: node app.js --name=joe
-
-const chalk = require("chalk");
-console.log(chalk.yellow("hi!"));
-
-
-// URL HASH https://nodejs.org/api/url.html#new-urlinput-base
-
-
-
-// nmp install body parser
-
-
-// get hash of the most recent commit
+// supposed to be the git hash
 require("child_process").exec("git rev-parse HEAD", function(err, stdout) {
     console.log("Last commit hash on this branch is:", stdout);
 });
 
-// get the information and export into a json file and serve it at the endpoint /versionz
-// Last commit hash on this branch is: 6bcb69310041f89f2a87c325ba525f3af6db7742
+// this is my server set up
 
+const server = http.createServer((req, res) => {
+    // query part in a new file
 
+    if (req.method !== "GET") {
+        res.end(`{"error": "${http.STATUS_CODES[405]}"}`);
+        logger.error(
+            `400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
+        );
+    } else {
+        if (req.url === "/helloworld") {
+            res.end("Hello Stranger !");
+            logger.info("Server Sent A Hello Stranger!");
+        }
+        if (req.url === "/helloUserInput") {
+            res.end(`<h1>Hello ${user} !!</h1>`);
+        }
+        if (req.url === "/versionz") {
+            res.setHeader("Content-Type", "application/json");
+            res.end(
+                JSON.stringify({
+                    projectName: "My tech challenge",
+                    hash: stdout
+                })
+            );
+            logger.info("JSON File with projectName and hash object was created");
+        }
+    }
+    res.end(`{"error": "${http.STATUS_CODES[404]}"}`);
+});
 
-// JSON PART: response also has a json() method, which returns a promise that will resolve with the content of the body processed and transformed into JSON.
+server.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+    logger.info(`Server started and running on http://localhost:${port}`);
 
-// Write a file with node: https://nodejs.dev/learn/writing-files-with-nodejs
+});
 
+// is stdout the hash ? // name of the project is in the project.json file
 
-// ERROR HANDLING IN NODE.JS https://nodejs.dev/learn/error-handling-in-nodejs
+// write a log file with winston logger
 
+// https://developer.ibm.com/tutorials/learn-nodejs-winston/
 
+// simple and fund testing with: https://mochajs.org/
 
-//RESOURCES returning different data types with node.js https://www.digitalocean.com/community/tutorials/how-to-create-a-web-server-in-node-js-with-the-http-module
+// OR jest ...
+
+//https://developer.okta.com/blog/2020/01/27/best-nodejs-testing-tools
+
+// I couldn't push to git why?
+
+// DOCKER: https://geshan.com.np/blog/2020/11/nodejs-with-docker/
