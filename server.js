@@ -37,11 +37,8 @@ require("child_process").exec("git rev-parse HEAD", function(err, stdout) {
 const server = http.createServer((req, res) => {
     // query part in a new file
 
-    if (req.method !== "GET") {
-        res.end(`{"error": "${http.STATUS_CODES[405]}"}`);
-        logger.error(
-            `400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
-        );
+    if (req.url === "/test") {
+        res.end("Hello SHell Test!", data);
     } else {
         if (req.url === "/helloworld") {
             res.end("Hello Stranger !");
@@ -58,13 +55,19 @@ const server = http.createServer((req, res) => {
             res.end(
                 JSON.stringify({
                     projectName: "My tech challenge",
-                    hash: stdout
+                    hash: stdout,
                 })
             );
-            logger.info("JSON File with projectName and hash object was created");
+            logger.info(
+                "JSON File with projectName and hash object was created"
+            );
         }
     }
     res.end(`{"error": "${http.STATUS_CODES[404]}"}`);
+
+    logger.error(
+        `404 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
+    );
 });
 
 server.listen(port, () => {

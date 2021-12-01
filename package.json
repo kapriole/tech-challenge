@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/kapriole/tech-challenge#readme",
   "dependencies": {
+    "docker": "^1.0.0",
     "mocha": "^9.1.3"
-  },
-  "devDependencies": {}
+  }
 }
