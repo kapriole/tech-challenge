@@ -31,8 +31,14 @@ OK, made some screenshots
 
 6. A structured log is written to standard out with:
 ISO date
+Nach etablierten Schichtenmodellen zur Einordnung von Netzwerkprotokollen nach ihren grundlegenderen oder abstrakteren Aufgaben wird HTTP der sogenannten Anwendungsschicht zugeordnet. Diese wird von den Anwendungsprogrammen angesprochen, im Fall von HTTP ist das meist ein Webbrowser. Im ISO/OSI-Schichtenmodell entspricht die Anwendungsschicht der 7. Schicht.
+
 HTTP status
+The current status of the service: send a status code
+
 Request
+show the request method (GET, POST, ...)
+
 
 7. Write a readme file with usage examples.
 
@@ -40,6 +46,7 @@ Request
 
 9. A production-ready Dockerfile, so the service can run safely inside a
 container.
+
 https://www.docker.com/blog/getting-started-with-docker-using-node-jspart-i/
 
 10. Documentation where it makes sense.

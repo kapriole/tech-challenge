@@ -28,5 +28,6 @@
   "homepage": "https://github.com/kapriole/tech-challenge#readme",
   "dependencies": {
     "mocha": "^9.1.3"
-  }
+  },
+  "devDependencies": {}
 }

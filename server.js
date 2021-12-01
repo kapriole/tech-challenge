@@ -45,7 +45,10 @@ const server = http.createServer((req, res) => {
     } else {
         if (req.url === "/helloworld") {
             res.end("Hello Stranger !");
-            logger.info("Server Sent A Hello Stranger!");
+            logger.info(
+                "Server Sent A Hello Stranger!",
+                `${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
+            );
         }
         if (req.url === "/helloUserInput") {
             res.end(`<h1>Hello ${user} !!</h1>`);
