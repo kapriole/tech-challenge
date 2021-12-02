@@ -3,7 +3,7 @@
 technical challenge by endo_code
 
 This project focuses on one way how to create a HTTP service.
-It uses the JS library node.js and many more which you can find in the package.file under "dependencies".
+It uses node.js and many more which you can find in the package.file under "dependencies".
 
 The project aims to solve Level 1 of endo_codes' technical challenge, which contains following points:
 
