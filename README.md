@@ -4,7 +4,7 @@ technical challenge by endo_code
 
 **INTRODUCTION**
 
-This project focuses on one way how to create a HTTP service.
+This project focuses on one way how to create an HTTP service.
 It uses node.js and a few more dependencies which you can find in the package.file under "dependencies".
 
 **INSTALLATION**
