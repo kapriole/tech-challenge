@@ -9,7 +9,7 @@ It uses node.js and a few more dependencies which you can find in the package.fi
 
 **INSTALLATION**
 
-To complete this project you need a text editor (like VS COde), a terminal, installations of npm (https://www.npmjs.com/), git (https://git-scm.com/), node.js (https://nodejs.dev/), mocha (https://mochajs.org/) and docker (https://www.docker.com/)
+To complete this project you need a text editor (like VS Code), a terminal, installations of npm (https://www.npmjs.com/), git (https://git-scm.com/), node.js (https://nodejs.dev/), mocha (https://mochajs.org/) and docker (https://www.docker.com/)
 
 The right make file creates the basic file architecture of the project.
 It "makes" the right files for you and can clean up after you, too.
