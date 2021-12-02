@@ -9,7 +9,7 @@ It uses node.js and a few more dependencies which you can find in the package.fi
 
 **INSTALLATION**
 
-To complete this project you need a text editor (like VS Code), a terminal, installations of npm (https://www.npmjs.com/), git (https://git-scm.com/), node.js (https://nodejs.dev/), mocha (https://mochajs.org/) and docker (https://www.docker.com/)
+To complete this project you need a text editor (like VS Code), a terminal, installations of <a href="https://www.npmjs.com/">npm</a>, <a href="https://git-scm.com/">git</a>, <a href="https://nodejs.dev/">node.js</a>, <a href="https://mochajs.org/">mocha</a> and <a href="https://www.docker.com/">docker</a>
 
 The right make file creates the basic file architecture of the project.
 It "makes" the right files for you and can clean up after you, too.
@@ -37,12 +37,14 @@ For the next endpoint you can run "name=AlfredENeumann node server_query.js" in 
 
 To check out the last endpoint you have to run "node server.js" in your command line and when the server is running check the outcome under http://localhost:3000/versionz
 
+ALTERNATIVELY: you can use the command line with <a href="https://curl.se/">curl</a>
+
 **API TESTING WITH POSTMAN**
 
-1. Sign up for free at Postman (https://www.postman.com/)
+1. Sign up for free at <a href="https://www.postman.com/">Postman</a>
 2. Open your Postman App 
 3. Type in your HTTP endpoints and check if everything works as 
-4. Alternatively you can use Postman in your console (https://testfully.io/blog/postman-api-testing/)
+4. Alternatively you can use Postman in your console <a href="https://testfully.io/blog/postman-api-testing/">Read More</a>
 
 **WRITE A LOG**
 The logger.js file uses information thru added logger.info to each request and when you start the server with "node server.js" and try out one of the endpoints then the logger.js creates a server.log in the folder "logs". When you are lucky, you can find a lot of valueable information about the HTTP status and the request methods of each endpoint.
@@ -55,7 +57,7 @@ To run the test file cd into the test folder and run "npm test"
 
 Check out the Dockerfile in the root directory of the project
 
-https://www.docker.com/blog/getting-started-with-docker-using-node-jspart-i/
+<a href="https://www.docker.com/blog/getting-started-with-docker-using-node-jspart-i/">Read More</a> 
 
 
 Good luck!
