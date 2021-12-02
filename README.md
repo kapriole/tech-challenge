@@ -113,6 +113,11 @@ Can'T connect to docker daemon: https://stackoverflow.com/questions/51857634/can
 
 10. Documentation where it makes sense.
 
+test & deployment pipeline
+
+https://www.geeksforgeeks.org/build-test-and-deploy-a-flask-rest-api-application-from-github-using-jenkins-pipeline-running-on-docker/
+
+
 
 
 
